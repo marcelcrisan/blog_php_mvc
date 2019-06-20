@@ -17,14 +17,14 @@
         <div class="news">
             <h3>
                 <!-- php echo change with = -->
-                <?= htmlspecialchars($data['titre']); ?>
-                <em>le <?= $data['date_creation_fr']; ?></em>
+                <?= htmlspecialchars($data['title']); ?>
+                <em>le <?= $data['creation_date_fr']; ?></em>
             </h3>
             
             <p>
-                <?= nl2br(htmlspecialchars($data['contenu'])); ?>
+                <?= nl2br(htmlspecialchars($data['content'])); ?>
                 <br />
-                <em><a href="commentaires.php?billet=<?= $data['id']; ?>">Commentaires</a></em>
+                <em><a href="post.php?id=<?= $data['id']; ?>">Commentaires</a></em>
             </p>
         </div>
         <?php
