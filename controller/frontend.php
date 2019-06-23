@@ -5,7 +5,7 @@
 
     function listPosts()
     {
-        $postManager = new PostManager(); // create object
+        $postManager = new \Marcel\Blog\Model\PostManager(); // create object
         $posts = $postManager->getPosts(); // function from object class PostManager
 
         require('./view/frontend/listPostsView.php');
@@ -13,8 +13,8 @@
     
     function post()
     {
-        $postManager = new PostManager();
-        $commentManager = new CommentManager();
+        $postManager = new \Marcel\Blog\Model\PostManager();
+        $commentManager = new \Marcel\Blog\Model\CommentManager();
 
         $post = $postManager->getPost($_GET['id']);
         $comments = $commentManager->getComments($_GET['id']);
@@ -24,7 +24,7 @@
 
     function addComment($postId, $author, $comment)
     {
-        $commentManager = new CommentManager();
+        $commentManager = new \Marcel\Blog\Model\CommentManager();
 
         $affectedLines = $commentManager->postComment($postId, $author, $comment);
 
