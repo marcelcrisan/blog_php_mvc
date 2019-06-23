@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    display: block;
+    width: 300px;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background: #a8dee6;
+    color: #000;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+a:hover{
+    background: #03373f;
+    color: coral;
+}
+.error_alert{
+    background: rgb(248, 156, 156);
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10%;
+    font-size: 2em;
+}
