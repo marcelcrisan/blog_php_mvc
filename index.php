@@ -36,8 +36,6 @@
                 }
             }
             elseif ($_GET['action'] == 'updateComment') {
-                // echo $_GET['id'];
-                
                 if (isset($_GET['id']) && $_GET['id'] > 0) {
                     if(!empty($_POST['author']) && !empty($_POST['comment'])) {
                         updateComment($_GET['id'], $_POST['postId'], $_POST['author'], $_POST['comment']);
