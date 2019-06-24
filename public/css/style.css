@@ -2,6 +2,12 @@ body{
     margin: 0;
     padding: 0;
 }
+.container{
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 3%;
+}
 a{
     display: block;
     width: 300px;
@@ -26,4 +32,16 @@ a:hover{
     box-sizing: border-box;
     padding: 10%;
     font-size: 2em;
+}
+.change-comment{
+    text-decoration: none;
+    background: none;
+    color: blue;
+    display: inline;
+    letter-spacing: 0.5px;
+}
+.change-comment:hover{
+    background: none;
+    color: red;
+    text-decoration: underline;
 }

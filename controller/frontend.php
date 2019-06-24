@@ -35,3 +35,29 @@
             header('Location: index.php?action=post&id=' . $postId);
         }
     }
+
+    function listComment() 
+    {
+        $listPostManager = new \Marcel\Blog\Model\PostManager();
+        $listCommentManager = new \Marcel\Blog\Model\CommentManager();
+
+        $post = $listPostManager->getPost($_GET['post_id']);
+        $comment = $listCommentManager->getComment($_GET['id']);
+    
+       require('./view/frontend/updateCommentView.php');
+    }
+
+    function updateComment($commentId, $postId, $author, $comment)
+    {
+        
+        $affectedCommentManager = new \Marcel\Blog\Model\CommentManager();
+        
+        $affectedComment = $affectedCommentManager->updateComment($commentId, $author, $comment);
+
+        if($affectedLines === false) {
+            throw new Exception('Impossible de modifier le commentaire !');
+        }
+        else {
+            header('Location: index.php?action=post&id=' . $postId);
+        } 
+    }

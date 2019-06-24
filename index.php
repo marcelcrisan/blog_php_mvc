@@ -27,6 +27,28 @@
                     throw new Exception('Aucun identifiant de billet envoyé');
                 }
             }
+            elseif ($_GET['action'] == 'listComment') {
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    listComment();
+                }
+                else {
+                    throw new Exception('Aucun identifiant de comentaire envoyé');
+                }
+            }
+            elseif ($_GET['action'] == 'updateComment') {
+                // echo $_GET['id'];
+                
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    if(!empty($_POST['author']) && !empty($_POST['comment'])) {
+                        updateComment($_GET['id'], $_POST['postId'], $_POST['author'], $_POST['comment']);
+                    }else {
+                        throw new Exception('Tous les champs ne sont pas remplis !');
+                    }
+                }
+                else {
+                    throw new Exception('Aucun identifiant de comment envoyé');
+                }
+            }
         }
         else {
             listPosts();

@@ -34,7 +34,7 @@
             while ($comment = $comments->fetch())
             {
         ?>
-        <p><strong><?php echo htmlspecialchars($comment['author']); ?></strong> le <?= $comment['comment_date_fr']; ?></p>
+        <p><strong><?php echo htmlspecialchars($comment['author']); ?></strong> le <?= $comment['comment_date_fr']; ?>  ( <a class="change-comment" href="index.php?action=listComment&id=<?= $comment['id'] ?>&post_id=<?= $post['id'] ?>">modifier</a> )</p>
         <p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>
         <?php
             } // End loop comments

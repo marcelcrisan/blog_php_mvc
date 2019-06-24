@@ -22,4 +22,22 @@
 
             return $affectedLines;
         }
+
+        public function getComment($commentId)
+        {
+            
+            $db = $this->dbConnect();
+            $commentList = $db->query("SELECT id, post_id, author, comment FROM comments WHERE id = $commentId ");
+
+            return $commentList;
+        }
+
+        public function updateComment($commentId, $author, $comment)
+        {
+            $db = $this->dbConnect();
+            $comment = $db->prepare("UPDATE comments SET author='$author', comment='$comment', comment_date=NOW() WHERE id=$commentId");
+            $affectedComment = $comment->execute();
+            
+            return $affectedComment;
+        }
     }
